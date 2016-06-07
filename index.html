@@ -25,12 +25,33 @@
 			    	min-height: 100vh;
 			    	min-width: 40em;
 			    }
+
+			    #hero-msg {
+						background: #ff6730; /* Old browsers */
+						background: -moz-linear-gradient(left, #ff6730 0%, #ffda38 100%); /* FF3.6-15 */
+						background: -webkit-linear-gradient(left, #ff6730 0%,#ffda38 100%); /* Chrome10-25,Safari5.1-6 */
+						background: linear-gradient(to right, #ff6730 0%,#ffda38 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+						filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff6730', endColorstr='#ffda38',GradientType=1 ); /* IE6-9 */
+
+						padding: .5rem;
+						display: inline-block;
+						position: absolute;
+						bottom: 50px;
+						left: 5rem;
+						border: 2px solid black;
+			    }
+			    #hero-msg p {
+			    	font-size: 1rem;
+			    	font-family: Arial;
+			    }
 			</style>
-			
+
      </head>
     <body>
 
     <section id="hero">
+
+    	<div id="hero-msg"><p>I know how to create a hero img</p></div>
     </section>
 
     <section>
