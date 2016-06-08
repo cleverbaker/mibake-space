@@ -24,6 +24,7 @@
 			    section {
 			    	min-height: 100vh;
 			    	min-width: 40em;
+			    	position: relative;
 			    }
 
 			    #hero-msg {
@@ -44,6 +45,49 @@
 			    	font-size: 1rem;
 			    	font-family: Arial;
 			    }
+			    #pattern-bg {
+			    	background-image: url('img/pattern.svg');
+					  background-size: cover;
+					  min-height: 200vh;
+			    }
+			    #phone-container {
+			    	display: inline-block;
+			    	position: absolute;
+			    	top: -10rem;
+			    	left: 50%;
+			    	margin-left: -203px;
+			    	background-image: url('img/iPhone.png');
+			    	width: 406px;
+			    	height: 830px;
+			    }
+
+			    #phone-video-container {
+				    display: inline-block;
+				    width: 349px;
+				    height: 320px;
+				    overflow: hidden;
+				    text-align: center;
+				    position: relative;
+				    margin-top: 166px;
+				    margin-left: 29px;
+			    }
+			    #phone-videoEl {
+			    	margin-left: -65px;
+			    }
+			  #container {
+		      overflow: hidden;
+		      position: absolute;
+		      top: 0; left: 0; right: 0; bottom: 0;
+		    }
+		    #videoEl  {
+		      position: absolute;
+
+		      top: 50%; left: 50%;
+		      transform: translate(-50%, -50%);
+
+		      object-fit: cover;
+		      height: 100%; width: 100%;
+		    }
 			</style>
 
      </head>
@@ -54,8 +98,25 @@
     	<div id="hero-msg"><p>I know how to create a hero img</p></div>
     </section>
 
-    <section>
+    <section id="pattern-bg">
+    	<div id="phone-container">
+    		<div id="phone-video-container">
+    			<video id="phone-videoEl" loop muted></video>
+    		</div>
+    	</div>
     </section>
 
+    <section id="video-bg">
+    	<div id="container">
+    		<video id="videoEl" loop muted></video>
+    	</div>
+	    <div id="video_cover"></div>
+	    <div id="overlay"></div>
+    </section>
+
+
+
+		  <script src="js/bideo.js"></script>
+		  <script src="js/main.js"></script>
     </body>
 </html>
