@@ -96,6 +96,12 @@ var bv2y = document.getElementById('phone-videoEl');
 var section1 = document.getElementById('pattern-bg');
 //bv2yy = bv2y.height;
 var rect = bv2y.getBoundingClientRect();
+var phone_top_position = rect.top;
+
+var handsEl = document.getElementById('hands');
+var hands_top_position = handsEl.getBoundingClientRect();
+handsEl.setAttribute("style", "opacity: 0;");
+
 console.log('bv2yy = ',rect.top);
 
 var temp1 = null;
@@ -112,6 +118,11 @@ var fixed_x = 0;
 var original_section_y = 0;
 var new_section_y = 0;
 
+var start_fixed_position = 650;
+
+var hands_up = false;
+var hands_up_scroll_start_position = 907;
+
 function doSomething(scroll_pos) {
   // do something with the scroll position
 }
@@ -125,40 +136,39 @@ window.addEventListener('scroll', function(e) {
 
         console.log('last_known_scroll_position = ',last_known_scroll_position);
         console.log('container_position = ',container_position);
-      if (last_known_scroll_position > 450 && last_known_scroll_position < 1700){
+      if (last_known_scroll_position > start_fixed_position && last_known_scroll_position < 1700){
 
 
                   if (post_fixed) {
                     bv2.videoEl.currentTime = bv.videoEl.currentTime;
-                    //bv.videoEl.pause();
+                    bv.videoEl.pause();
 
                   bv.videoEl.addEventListener("timeupdate", function() {
                     if (paused) {
-                    //bv.videoEl.pause();
+                    bv.videoEl.pause();
                     }}, false);
 
                     keep_large_paused = true;
                     post_fixed = false;
                   }
                   else if (keep_large_paused) {
-                  //bv2.videoEl.play();
+                  bv2.videoEl.play();
                     
                   }
                   else {
 
-                  //bv.videoEl.play();
-                  //bv2.videoEl.play();
+                  bv.videoEl.play();
+                  bv2.videoEl.play();
                     
                   }
 
 
-       // if (post_fixed) bv.videoEl.pause();
+        if (post_fixed) bv.videoEl.pause();
 
         paused = false;
 
         rect = bv2y.getBoundingClientRect();
 
-        rect.top
 
         console.log('fired \n', temp1, '\n', temp2);
 
@@ -169,7 +179,7 @@ window.addEventListener('scroll', function(e) {
         fixed_height = rect.top;
         fixed_x = rect.left;
 
-         // bv2y.setAttribute("style", "position: fixed; top: "+fixed_height+"px; left: "+fixed_x+"px");
+          bv2y.parentElement.parentElement.setAttribute("style", "position: fixed; top: "+fixed_height+"px;");
           rect = section1.getBoundingClientRect();
           temp1 = rect.top;
           original_section_y = temp1;
@@ -179,9 +189,15 @@ window.addEventListener('scroll', function(e) {
 
         fixed_set = true;
         }
+        else {
+          if (!hands_up_scroll_start_position && last_known_scroll_position >= hands_up_scroll_start_position) {
+            handsEl.setAttribute("style", "opacity: 1;");
+            hands_up_scroll_start_position = true;
+          }
+        }
        }
 
-        if (last_known_scroll_position <= 450 && fixed_set){
+        if (last_known_scroll_position <= start_fixed_position && fixed_set){
 
           if (!small_video_is_home) {
             rect = section1.getBoundingClientRect();
@@ -189,10 +205,10 @@ window.addEventListener('scroll', function(e) {
             temp2 = original_section_y - new_section_y;
             temp2 = 0 - new_section_y + fixed_height;
 
-           // bv2y.setAttribute("style", "position: absolute; top: "+temp2+"px; left: "+fixed_x+"px");
+            bv2y.parentElement.parentElement.setAttribute("style", "position: absolute; top: "+temp2+"px;");
             small_video_is_home = true;
             fixed_set = false;
-           // bv2.videoEl.pause();
+            bv2.videoEl.pause();
           }
 
 
@@ -200,11 +216,11 @@ window.addEventListener('scroll', function(e) {
 
                   bv.videoEl.currentTime = temp2;
 
-                 // bv.videoEl.pause();
+                  bv.videoEl.pause();
 
                   bv.videoEl.addEventListener("timeupdate", function() {
                     if (paused) {
-                  //  bv.videoEl.pause();
+                    bv.videoEl.pause();
                     }}, false);
 
 
@@ -218,7 +234,7 @@ window.addEventListener('scroll', function(e) {
            temp2 = 0 - new_section_y + fixed_height;
 
            if (!post_fixed) {
-           //  bv2y.setAttribute("style", "position: absolute; top: "+temp2+"px; left: "+fixed_x+"px");
+             bv2y.parentElement.parentElement.setAttribute("style", "position: absolute; top: "+temp2+"px;");
              post_fixed = true;
 
               bv2.videoEl.currentTime = bv.videoEl.currentTime;
@@ -226,24 +242,23 @@ window.addEventListener('scroll', function(e) {
 
           fixed_set = false;
 
-
                   paused = true;
-                  //bv.videoEl.pause();
-                  //bv2.videoEl.pause();
-/*
+                  bv.videoEl.pause();
+                  bv2.videoEl.pause();
+
                   temp1 = bv.videoEl.currentTime;
                   temp2 = bv2.videoEl.currentTime;
-                  bv.videoEl.currentTime = temp2;*/
-                  //bv.videoEl.play();
-                  //bv2.videoEl.currentTime = bv.videoEl.currentTime;
-                  //bv2.videoEl.pause();
-                  /*bv.videoEl.pause();
+                  bv.videoEl.currentTime = temp2;
+                  bv.videoEl.play();
+                  bv2.videoEl.currentTime = bv.videoEl.currentTime;
+                  bv2.videoEl.pause();
+                  bv.videoEl.pause();
 
                   bv.videoEl.addEventListener("timeupdate", function() {
                     if (paused) {
                     bv.videoEl.pause();
                     }}, false);
-*/
+
         }
 
       ticking = false;
