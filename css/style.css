@@ -1,0 +1,71 @@
+
+    
+
+@font-face {
+  font-family: 'gotham_mediumregular';
+  src: url('gotham-medium-webfont.woff2') format('woff2'),
+       url('gotham-medium-webfont.woff') format('woff');
+
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+@font-face {
+font-family: 'aleoregular';
+src: url('Aleo-Regular-webfont.woff') format('woff'),
+     url('Aleo-Regular-webfont.svg#aleoregular') format('svg');
+
+font-weight: normal;
+font-style: normal;
+}
+
+@font-face {
+    font-family: 'comic_bookbold_italic';
+    src: url('comic_book_bold_italic-webfont.woff2') format('woff2'),
+         url('comic_book_bold_italic-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+    body {
+        font-family: 'gotham_mediumregular';
+        color: #150c0e;
+    }
+
+
+    #hero p {
+      
+            font-family: 'aleoregular';
+            font-size: 1.5rem;
+            line-height: 1.7rem;
+    }
+
+    h1 {
+      font-size: 4.854rem;
+      font-size: 3rem;
+    }
+    h2 {
+      font-size: 1.85rem;
+    }
+
+::selection {
+  background-color: #8e44ad;
+  color: white;
+  text-shadow: 1px 1px 0 #27ae60;
+}
+
+.prof {
+    position: relative;
+
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+
+    -webkit-box-shadow: 0 0 0 3px #fff, 0 0 0 4px #999, 0 2px 5px 4px rgba(0,0,0,.2);
+    -moz-box-shadow: 0 0 0 3px #fff, 0 0 0 4px #999, 0 2px 5px 4px rgba(0,0,0,.2);
+    box-shadow: 0 0 0 3px #fff, 0 0 0 4px #999, 0 2px 5px 4px rgba(0,0,0,.2);
+
+    width: 10rem;
+    height: auto;
+}
