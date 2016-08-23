@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Mike Baker, Bike Maker @mibake</title>
+        <title>Mike Baker, Site Maker @mibake</title>
 
 		<link rel="stylesheet" type="text/css" href="css/style.css" />
 		<link rel="stylesheet" type="text/css" href="css/button.css" />
@@ -89,7 +89,7 @@
 			    }
 			    .phone-fixed {
 				    position: fixed !important;
-				    bottom: 15.41rem;
+				    bottom: 5rem;
 				    top: inherit !important;
 			    }
 
@@ -134,15 +134,18 @@
 
 		    }
 		    #hands {
+		    	overflow: hidden;
 		    	display: none;
 		    	position: fixed;
 		    	left: 0;
 		    	right: 0;
-		    	bottom: 0;
+		    	bottom: -10.41rem;
 
 			   transition: opacity .8s ease-in-out;
 			   -moz-transition: opacity .8s ease-in-out;
 			   -webkit-transition: opacity .8s ease-in-out;
+
+	
 		    }
 		    .hands {
 		    	height: 0;
@@ -151,6 +154,7 @@
 			   transition: opacity .8s ease-in-out;
 			   -moz-transition: opacity .8s ease-in-out;
 			   -webkit-transition: opacity .8s ease-in-out;
+			   transition: height .8s ease-in-out;
 		    }
 		    .hands-on {
 		    	opacity: 1;
@@ -315,6 +319,14 @@ h5 {
 	  margin: .7rem 0;
 }
 
+.study {
+	font-weight: bold;
+}
+
+.place {
+	font-style: italic;
+}
+
 .button {
 	font-size: 1.2rem;
 	border-color: transparent;
@@ -374,12 +386,15 @@ h5 {
 			    	display: inline-block;
 			    }
 	.col {
-		width: 28%;
+		width: 31%;
 		display: inline-block;
 		font-size: 1rem;
 	}
 	.col-wide {
-		width: 38%;
+		width: 36%;
+	}
+	.place {
+		width: 29%;
 	}
 	#hands {
 		 display: inline-block;
@@ -391,6 +406,19 @@ h5 {
 
 
 }
+
+
+
+@media only screen and (min-height: 580px)  {
+
+	.phone-fixed {
+		  bottom: 15.41rem;
+	}
+	#hands {
+		bottom: 0;
+	}
+
+	}
 
 			</style>
 
@@ -419,7 +447,7 @@ h5 {
 		    	<p class="intro-txt"><strong>I work with creative agencies</strong> across the country, delivering websites and
 		providing front-end support for web applications,
 		 <strong>building fast, responsive, accessible front-ends,</strong> with a strong focus on
-		Vanilla JavaScript, SVG, CSS, HTML5, responsive web design, and performace.
+		Vanilla JavaScript, SVG, CSS, HTML5, responsive web design, and performance.
 		<svg xmlns="http://www.w3.org/2000/svg" version="1.1" class="svg-filters">
 						<defs>
 							<filter id="filter-goo-3">
@@ -450,9 +478,9 @@ h5 {
     			<li>Responsive Web Design</li>
     			<li>Progressive Engancement</li>
     			<li>WordPress</li>
-    			<li>Node.JS</li>
-    			<li>Angular.JS</li>
-    			<li>d3.JS</li>
+    			<li>Node.js</li>
+    			<li>AngularJS</li>
+    			<li>D3.js</li>
     			<li>Elastic Search</li>
     			<li>Kibana</li>
     			<li>Interaction Design</li>
@@ -502,19 +530,19 @@ h5 {
 					<h3>School Work</h3>
 					<div class="three-columns">
 						<div class="row">
-							<span class="col">Computer Science</span><span class="col col-wide">Syracuse University</span><span class="col">Syracuse, NY</span>
+							<span class="col"><span class="study">Computer Science</span></span><span class="col col-wide">Syracuse University</span><span class="col place">Syracuse, NY</span>
 						</div>
 						<div class="row">
-							<span class="col">Statics, Econ, Law</span><span class="col col-wide">Saddleback College</span><span class="col">Orange County, CA</span>
+							<span class="col"><span class="study">Statics, Econ, Law</span></span><span class="col col-wide">Saddleback College</span><span class="col place">Orange County, CA</span>
 						</div>
 						<div class="row">
-							<span class="col">3D Modeling</span><span class="col col-wide">Gnoman School of Visual Effects</span><span class="col">Hollywood, CA</span>
+							<span class="col"><span class="study">3D Modeling</span></span><span class="col col-wide">Gnoman School of Visual Effects</span><span class="col place">Hollywood, CA</span>
 						</div>
 						<div class="row">
-							<span class="col">Scientific Visualization</span><span class="col col-wide">Chapman University</span><span class="col">Orange County, CA</span>
+							<span class="col"><span class="study">Scientific Visualization</span></span><span class="col col-wide">Chapman University</span><span class="col place">Orange County, CA</span>
 						</div>
 						<div class="row">
-							<span class="col">Real World</span><span class="col col-wide">Real World</span><span class="col">SoCal & Sillicon Valley</span>
+							<span class="col"><span class="study">Business, Customer Service</span></span><span class="col col-wide">Real World</span><span class="col place">SoCal & Sillicon Valley</span>
 						</div>
 					</div>
     		</div>
@@ -533,7 +561,7 @@ h5 {
     		<video id="videoEl" loop muted></video>
     	</div>
     	<div class="top_bar">
-    		<ul><li><a href="https://github.com/codakid"><span id="github" class="social-icon"><img src="img/social_icons-small.png"></span>github</a></li>
+    		<ul><li><a href="https://github.com/cleverbaker/mibake-space/commits/master"><span id="github" class="social-icon"><img src="img/social_icons-small.png"></span>github</a></li>
     		<li><li><a href="https://twitter.com/mibake"><span id="twitter" class="social-icon"><img src="img/social_icons-small.png"></span>twitter</a></li>
     		<li><li><a href="https://www.instagram.com/mibake"><span id="instagram" class="social-icon"><img src="img/social_icons-small.png"></span>instagram</a></li>
     		<li></li></ul>

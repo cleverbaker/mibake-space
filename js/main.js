@@ -108,7 +108,12 @@ var phoneEl = document.getElementById("phone-container");
 
 var temp_num = getPosition(elmnt).y;
 
+console.log('video panel y pos = ', temp_num);
+
 var phone_fixed_trigger = temp_num - 680;
+
+console.log('phone_fixed_trigger number = ', phone_fixed_trigger);
+
 
 
 function doSomething(scroll_pos) {
@@ -124,7 +129,10 @@ function doSomething(scroll_pos) {
         }
 
         handsEl.style.opacity = '1';
-        handsEl.style.height = 'auto';
+        handsEl.style.height = '578px';
+        handsEl.style.overflow = 'auto';
+          addClass(phoneEl,'phone-fixed'); 
+
       } else {
 
           console.log('nope');
@@ -142,6 +150,7 @@ function doSomething(scroll_pos) {
         }
 
         handsEl.style.opacity = '0';
+        //set delay for 1 second before setting height to 0 to allow for animated opacity transition
         handsEl.style.height = '0';
         
       }
