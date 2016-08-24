@@ -31,8 +31,7 @@
 			      height: initial;
 			      overflow: initial;
 			    }
-			    section {
-			    	min-height: 100vh;
+			    section{
 			    	width: 100%;
 			    	position: relative;
 					  box-shadow: 0px 1px 10px #2b2b2b;
@@ -71,7 +70,6 @@
 			    #pattern-bg {
 			    	background-image: url('img/pattern.svg');
 					  background-size: cover;
-					  min-height: 110vh;
 					  border-top: 1px solid brown;
 					  box-shadow: none;
 			    }
@@ -120,17 +118,6 @@
 		      overflow: hidden;
 		      position: absolute;
 		      top: 0; left: 0; right: 0; bottom: 0;
-		    }
-
-		    #videoEl  {
-		      position: absolute;
-
-		      top: 50%; left: 50%;
-		      transform: translate(-50%, -50%);
-
-		      object-fit: cover;
-		      height: 100%; width: 100%;
-
 		    }
 		    #hands {
 		    	overflow: hidden;
@@ -204,6 +191,10 @@
 		    	height: 2rem;
 		    	float: left;
 					color: #222;
+					display: inline-block;
+    			overflow: auto;
+    			z-index: 12;
+    			position: relative;
 		   }
 		   .top_bar li a span {
 		   	margin-right: .2rem;
@@ -288,7 +279,7 @@ strong {
 .work-container {
     margin: 3rem auto 0;
     max-width: 53rem;
-    padding: 0 3rem 13rem 3rem;
+    padding: 0 3rem 3rem 3rem;
 
 	  overflow: hidden;
 }
@@ -403,11 +394,18 @@ h5 {
 	 }
 
 
+
+
 }
 
 
 
 @media only screen and (min-height: 580px)  {
+
+
+  section {
+  	min-height: 100vh;
+  }
 
 	.phone-fixed {
 		  bottom: 15.41rem;
@@ -415,6 +413,41 @@ h5 {
 	#hands {
 		bottom: 0;
 	}
+
+
+	.work-container {
+	    margin: 3rem auto 0;
+	    max-width: 53rem;
+	    padding: 0 3rem 13rem 3rem;
+
+		  overflow: hidden;
+	}
+	
+
+    #videoEl  {
+      position: absolute;
+
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+
+      object-fit: cover;
+      height: 100%; width: 100%;
+
+    }
+
+
+
+		#hire-me {
+			  margin: 2rem;
+		    float: right;
+		}
+
+
+			    #pattern-bg {
+			    	background-image: url('img/pattern.svg');
+					  background-size: cover;
+					  min-height: 10vh;
+					}
 
 	}
 
@@ -438,7 +471,7 @@ h5 {
 
 							<div class="left-col"><span class="left-sum">JavaScript + Interface </span></div><div class="right-col"><span class="right-sum">Engineer</span></div>
 							<div class="left-col"><span class="left-sum">Security </span></div><div class="right-col"><span class="right-sum">Enthusiast</span></div>
-							<div class="left-col"><span class="left-sum">Responsive Web Design </span></div><div class="right-col"><span class="right-sum">Sexpert</span></div>
+							<div class="left-col"><span class="left-sum">Responsive Web Design </span></div><div class="right-col"><span class="right-sum">Expert</span></div>
 						</div>
 		    	</div>
 
