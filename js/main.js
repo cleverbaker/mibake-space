@@ -1,6 +1,6 @@
 (function () {
 
-  if (!window.matchMedia('(max-width: 768px)').matches) {
+  if (!window.matchMedia('(max-width: 899px)').matches) {
 
     initBt3();
 
@@ -22,7 +22,7 @@
 
     autoplay: false,
 
-    isMobile: window.matchMedia('(max-width: 768px)').matches,
+    isMobile: window.matchMedia('(max-width: 899px)').matches,
 
    // playButton: document.querySelector('#play2'),
    // pauseButton: document.querySelector('#pause2'),
@@ -110,7 +110,7 @@ var temp_num = getPosition(elmnt).y;
 
 console.log('video panel y pos = ', temp_num);
 
-var phone_fixed_trigger = temp_num - 680;
+var phone_fixed_trigger = temp_num - 680; //this 680 number should be a variable calculated based on screen height
 
 console.log('phone_fixed_trigger number = ', phone_fixed_trigger);
 
@@ -123,6 +123,7 @@ function doSomething(scroll_pos) {
       if (scroll_pos > phone_fixed_trigger){
 
         if (paused && scroll_pos > 1500) {
+          //this 1500 number should be a variable calculated based on screen height
           bv.videoEl.play();
           bv2.videoEl.play();
           paused = false;

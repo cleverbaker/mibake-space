@@ -12,16 +12,14 @@
 
 			  <style>
 
+					@font-face {
+					    font-family: 'comic_bookbold_italic';
+					    src: url('css/comic_book_bold_italic-webfont.woff2') format('woff2'),
+					         url('css/comic_book_bold_italic-webfont.woff') format('woff');
+					    font-weight: normal;
+					    font-style: normal;
 
-
-@font-face {
-    font-family: 'comic_bookbold_italic';
-    src: url('css/comic_book_bold_italic-webfont.woff2') format('woff2'),
-         url('css/comic_book_bold_italic-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-
-}
+					}
 			    * {
 			      margin: 0; padding: 0;
 			    }
@@ -47,7 +45,6 @@
 
 					  overflow: auto;
 			    }
-
 
 			    #hero-msg {
 			    	display: none; /* display none mobile first */
@@ -108,7 +105,6 @@
 	   				position: relative;
 			    }
 
-
 		    #video-bg {
 		    	height: initial;
 		    	min-height: initial;
@@ -130,7 +126,6 @@
 			   transition: opacity .8s ease-in-out;
 			   -moz-transition: opacity .8s ease-in-out;
 			   -webkit-transition: opacity .8s ease-in-out;
-
 	
 		    }
 		    .hands {
@@ -165,7 +160,7 @@
 		    	left: 0;
 		    	right: 0;
 		    	height: 2rem;
-		    	background-color: rgba(247,248,243,0.2);
+		    	background-color: #aabbcc;
 		    	text-align: center;
 					color: #222;
 		    }
@@ -303,7 +298,6 @@ h5 {
 	font-size: 1rem;
 }
 
-
 .row {
 	  margin: .7rem 0;
 }
@@ -371,9 +365,9 @@ h5 {
 	.right-col {
    			 min-width: 12rem;}
 
-			    #phone-container {
-			    	display: inline-block;
-			    }
+  #phone-container {
+  	display: inline-block;
+  }
 	.col {
 		width: 31%;
 		display: inline-block;
@@ -389,12 +383,13 @@ h5 {
 		 display: inline-block;
 	}
 
+	.top_bar {
+		  background-color: rgba(247,248,243,0.2);
+	}
+
 	 #video-bg {
 		   min-height: 100vh;
 	 }
-
-
-
 
 }
 
@@ -435,19 +430,16 @@ h5 {
 
     }
 
-
-
 		#hire-me {
 			  margin: 2rem;
 		    float: right;
 		}
 
-
-			    #pattern-bg {
-			    	background-image: url('img/pattern.svg');
-					  background-size: cover;
-					  min-height: 10vh;
-					}
+    #pattern-bg {
+    	background-image: url('img/pattern.svg');
+		  background-size: cover;
+		  min-height: 10vh;
+		}
 
 	}
 
@@ -475,10 +467,8 @@ h5 {
 						</div>
 		    	</div>
 
-		    	<p class="intro-txt"><strong>I work with creative agencies</strong> across the country, delivering websites and
-		providing front-end support for web applications,
-		 <strong>building fast, responsive, accessible front-ends,</strong> with a strong focus on
-		Vanilla JavaScript, SVG, CSS, HTML5, responsive web design, and performance.
+		    	<p class="intro-txt">I build fast, responsive, accessible front-end code, with a strong focus on Vanilla 
+JavaScript, SVG animations, CSS, HTML5, responsive web design, and performance.
 		<svg xmlns="http://www.w3.org/2000/svg" version="1.1" class="svg-filters">
 						<defs>
 							<filter id="filter-goo-3">
@@ -526,8 +516,8 @@ h5 {
     			<li>Walmart Labs</li>
     			<li>Chase Bank</li>
     			<li>Sun Edison</li>
+    			<li>Telstra</li>
     			<li>Sqaure</li>
-    			<li>Tensla</li>
     			<li>IHOP</li>
     			<li>Lauren Conrad</li>
     			<li>& more&hellip;</li>
@@ -600,7 +590,6 @@ h5 {
 	    <div id="video_cover"></div>
 	    <div id="overlay"></div>
     </section>
-
 
 
 		  <script src="js/bideo.js"></script>
