@@ -149,6 +149,11 @@ console.log('body = ',bv2yy);
     //
     // Also called when window/container is resized
     this.resize = function () {
+      
+        console.log('window height = ');
+        var window_height = window.innerHeight;
+        console.log(window_height);
+      
       // IE/Edge still don't support object-fit: cover
       if ('object-fit' in document.body.style) return;
 
