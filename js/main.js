@@ -9,6 +9,9 @@
 
   var paused = true;
 
+  var bv1_played_count = 0;
+  var bv2_played_count = 0;
+
   var bv = new Bideo();
   bv.init({
     // Video element
@@ -46,7 +49,8 @@
         document.querySelector('#video_cover').style.display = 'none';
         initial_cover_on_bv = false;
       }
-      console.log('01 -initial video frame..');
+      console.log('01 -initial video frame.. - played ', bv1_played_count, " times.");
+      ++bv1_played_count;
       bv.videoEl.pause();
       bv2.videoEl.pause();
       paused = true;
@@ -92,7 +96,12 @@
         document.querySelector('#video_cover').style.display = 'none';
         initial_cover_on_bv2 = false;
       }
-      console.log('02 -initial video frame..');
+      console.log('02 -initial video frame.. - played ', bv2_played_count, ' times.');
+      ++bv2_played_count;
+
+      if (bv2_played_count > 1) {
+        bonus_upgrade();
+      }
     }
   });
 
@@ -113,6 +122,18 @@ console.log('video panel y pos = ', temp_num);
 var phone_fixed_trigger = temp_num - 680; //this 680 number should be a variable calculated based on screen height
 
 console.log('phone_fixed_trigger number = ', phone_fixed_trigger);
+
+
+var bonus = document.getElementById("bonus");
+
+function bonus_upgrade () {
+
+  bonus.className = "";
+  bonus.style.height= "auto";
+  bonus.style.minHeight= "100vh";
+  bonus.style.maxHeight= "100vh";
+
+}
 
 
 

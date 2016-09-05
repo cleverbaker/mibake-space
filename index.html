@@ -279,6 +279,10 @@
 		    	float: right;
 		    }
 
+		    #bonus {
+		    	display: none;
+		    }
+
 strong {
 	display: inline;
 	background-color: yellow;
@@ -346,7 +350,7 @@ h5 {
 	text-align: center;
 	overflow: hidden;
 	position: relative;
-	display: inline-block;
+	display: inline-blobv1_played_countck;
 	opacity: .8;
 }
 .social-icon img {
@@ -413,6 +417,23 @@ h5 {
 
 	 #video-bg {
 		   min-height: 100vh;
+	 }
+
+	 #bonus {
+	 	display: block;
+
+	 	min-height: 0;
+	 	max-height: 0;
+		overflow: hidden;
+
+	/* Set our transitions up. */
+	-webkit-transition: max-height 0.8s;
+	-moz-transition: max-height 0.8s;
+	transition: max-height 0.8s;
+	 }
+
+	 .pancake {
+	 	height: 0 !important;
 	 }
 
 }
@@ -616,6 +637,11 @@ JavaScript, SVG animations, CSS, HTML5, responsive web design, and performance.
     	</div>
 	    <div id="video_cover"></div>
 	    <div id="overlay"></div>
+    </section>
+
+    <section id="bonus" class="pancake">
+
+
     </section>
 
 
