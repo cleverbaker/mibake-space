@@ -28,7 +28,6 @@
 		<link rel="stylesheet" type="text/css" href="css/style.css" />
 		<link rel="stylesheet" type="text/css" href="css/button.css" />
 
-   <script src="js/TweenMax.min.js"></script>
 
 			  <style>
 			    * {
@@ -67,12 +66,15 @@
 
 						padding: .2rem .8rem .1rem .7rem;
 						position: absolute;
-						bottom: 1rem;
+						bottom: 2.7182818rem;
 						left: 5rem;
 						border: 2px solid black;
 			    }
 			    #hero-msg p {
 			    	font-size: 1rem;
+			    	font-family: 'comic_bookbold_italic', sans-serif;
+			    }
+			    .comic_book {
 			    	font-family: 'comic_bookbold_italic', sans-serif;
 			    }
 			    #pattern-bg {
@@ -280,7 +282,14 @@
 		    }
 
 		    #bonus {
-		    	display: none;
+		    	display: inline-block;
+		    	overflow: auto;
+		    	padding-top: 2rem;
+		    	padding-left: 1rem;
+		    	min-height: 2rem;
+		    }
+		    #bonus-link {
+		    	margin-top: 1rem;
 		    }
 
 strong {
@@ -337,6 +346,7 @@ h5 {
     margin-bottom: 0;
     font-weight: 400;
     text-align: center;
+    font-family: 'comic_bookbold_italic', sans-serif;
 }
 
 #hire-me {
@@ -430,6 +440,7 @@ h5 {
 	-webkit-transition: max-height 0.8s;
 	-moz-transition: max-height 0.8s;
 	transition: max-height 0.8s;
+	padding-top: 0;
 	 }
 
 	 .pancake {
@@ -502,7 +513,7 @@ h5 {
 
 		    	<h2>Michael Baker</h2>
 		    	<h2>Front-End Development</h2>
-		    	<h2>UX Designer</h2>
+		    	<h2>UX Design</h2>
 
 		    	<div id="sum">
 		    		<div class="center-me">
@@ -537,7 +548,6 @@ JavaScript, SVG animations, CSS, HTML5, responsive web design, and performance.
 
     <section id="pattern-bg">
 
-    	<div id="hands" class="hands"><img src="img/hands.png"></div>
     	<div class="work-container">
 
     		<h3>Neato Factoids</h3>
@@ -624,6 +634,8 @@ JavaScript, SVG animations, CSS, HTML5, responsive web design, and performance.
 	    		<img src="img/iPhone-small-140-clear.png">
 	    	</div>
     	</div>
+
+    	<div id="hands" class="hands"><img src="img/hands.png"></div>
     </section>
 
     <section id="video-bg">
@@ -641,11 +653,12 @@ JavaScript, SVG animations, CSS, HTML5, responsive web design, and performance.
     </section>
 
     <section id="bonus" class="pancake">
-
+    	<a href="/pdf/BakerMichael_Frontend-Development--UX-Design_resume.pdf" class="hero-talk breathing-room">Resume</a>
 
     </section>
 
 
+  	  <script src="js/TweenMax.min.js"></script>
 		  <script src="js/bideo.js"></script>
 		  <script src="js/main.js"></script>
     </body>

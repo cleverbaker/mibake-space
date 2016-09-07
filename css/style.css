@@ -20,6 +20,7 @@ font-weight: normal;
 font-style: normal;
 }
 
+/* comic_book font optimized for the characters 'I know how to create a HERO IMG' */
 @font-face {
     font-family: 'comic_bookbold_italic';
     src: url('comic_book_bold_italic-webfont.woff2') format('woff2'),
@@ -34,7 +35,7 @@ font-style: normal;
     }
 
 
-    #hero p {
+    #hero p, .hero-talk {
       
             font-family: 'aleoregular';
             font-size: 1.5rem;
