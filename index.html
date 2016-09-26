@@ -28,7 +28,7 @@
 				<meta property="og:description" content="Mike Baker, Site Maker @mibake, JavaScript Developer, Responsive Web Design, UX Engineer, looking for an excuse to travel distances near and far to talk with you in person.">
 				<meta property="og:image" content="http://mibake.space/img/Mike-Baker_site-maker_Hire-this-guy.jpg">
 				<meta property="og:url" content="http://mibake.space">
-				<meta name="twitter:card" content="http://mibake.space/img/Mike-Baker_site-maker_Hire-this-guy.jpghttp:/"mibake.space/>
+				<meta name="twitter:card" content="http://mibake.space/img/Mike-Baker_site-maker_Hire-this-guy.jpg"mibake.space/>
 				
 		<link rel="stylesheet" type="text/css" href="css/style.css" />
 		<link rel="stylesheet" type="text/css" href="css/button.css" />
@@ -225,7 +225,7 @@
 
 		    #hello {
 		    	max-width: 35rem;
-		    	padding-top: 4rem;
+		    	padding-top: 1.62rem;
 
 		    	background-color: rgba(247,248,243,0.4);
 		    	border-radius: 0 0 0 1rem;
@@ -250,7 +250,7 @@
 		    }
 
 		    #sum {
-		    	margin-top: 1.2rem;
+		    	margin-top: 0.2rem;
   			  text-align: center;
 		    }
 
@@ -274,12 +274,12 @@
 		    	margin-bottom: .5rem;
 		    }
 		    h2 {
-		    	margin: .2rem 0;
+		    	margin: 0;
 		    }
 
 		    .intro-txt {
 		    	margin: 0.2rem 2rem 1.2rem;
-		    	padding: 1.2rem;
+		    	padding: 0.2rem;
 		    }
 
 		    .right {
@@ -394,6 +394,13 @@ h5 {
 
 	}
 
+	#hello {
+		  padding-top: 4rem;
+	}
+	h2 { margin: 0.2rem 0; }
+	#sum { margin-top: 1.2rem; }
+	#intro-txt {  }
+
 	#hero {
 							    -webkit-background-size: cover;
 			  -moz-background-size: cover;
@@ -452,9 +459,20 @@ h5 {
 	 	height: 0 !important;
 	 }
 
+	
+
 }
 
-
+ #rwd_box {
+	 	position: fixed;
+	 	display: block;
+	 	width: 1px;
+	 	height: 1px;
+	 	border: 1px solid red;
+	 	top: 33px;
+	 	left: 33px;
+	 	display: none;
+	 }
 
 @media only screen and (min-height: 580px)  {
 
@@ -592,7 +610,11 @@ JavaScript, SVG animations, CSS, HTML5, responsive web design, and performance.
     			<li>FLIPSIDE</li>
     			<li>HEILBrice</li>
     			<li>Big Bad Goose</li>
-    			<li>y mucho más&hellip;</li>
+    			<li>MDM Worldwide</li>
+    			<li>Crowdly</li>
+    			<li>Prove</li>
+    			<li>Lunar</li>
+    			<li>y más&hellip;</li>
 
     		</ul>
 
@@ -602,7 +624,7 @@ JavaScript, SVG animations, CSS, HTML5, responsive web design, and performance.
 				<br><a href="https://opensoc.github.io/">https://opensoc.github.io</a></p>
 
     		<h5>Adblock</h5>
-						<p><a href="https://getadblock.com/">https://getadblock.com</a>
+						<p><a href="https://getadblock.com/contributors/#past_contributors">https://getadblock.com</a>
 						</p>
 
     		<h5>Disconnect</h5>
@@ -662,7 +684,7 @@ JavaScript, SVG animations, CSS, HTML5, responsive web design, and performance.
 
     </section>
 
-
+    <span id="rwd_box" style="width:10px; height:10px"></span>
   	  <script src="js/TweenMax.min.js"></script>
 		  <script src="js/bideo.js"></script>
 		  <script src="js/main.js"></script>

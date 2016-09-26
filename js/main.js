@@ -115,11 +115,15 @@ var handsEl = document.getElementById("hands");
 
 var phoneEl = document.getElementById("phone-container");
 
-var temp_num = getPosition(elmnt).y;
+var temp_video_panel_scroll_height = getPosition(elmnt).y;
 
-console.log('video panel y pos = ', temp_num);
+var temp_phone_scroll_height = getPosition(phoneEl).y;
 
-var phone_fixed_trigger = temp_num - 680; //this 680 number should be a variable calculated based on screen height
+console.log('video panel y pos = ', temp_video_panel_scroll_height);
+
+console.log('phone video y pos = ', temp_phone_scroll_height);
+
+var phone_fixed_trigger = temp_video_panel_scroll_height - 338 - 400; // phone height it 338px, hands height is 578px
 
 console.log('phone_fixed_trigger number = ', phone_fixed_trigger);
 
@@ -246,6 +250,8 @@ function removeClass(el, className) {
 
 
 
+  var real_bt = document.querySelectorAll('#hire-me')[0];
+  console.log('real_bt = ', real_bt);
 
 
 
@@ -318,4 +324,45 @@ function initBt3() {
     }
   });
 }
+function animateHireMeButton(){
+
+  var real_particleCount = 6;
+  var real_particles;
+  real_particles = []
+  console.log('Fire away!');
+
+  TweenLite.to(real_bt.querySelectorAll('.button__bg'), 1.5, { scaleX: 1.05, ease: Expo.easeOut, delay: 0.2 });
+
+
+    for (var i = 0; i < real_particleCount; i++) {
+      real_particles.push(document.createElement('span'));
+      real_bt.appendChild(real_particles[i]);
+
+      real_particles[i].classList.add(i % 2 ? 'left' : 'right');
+      
+      var dir = i % 2 ? '-' : '+';
+      var tl = new TimelineLite();
+
+      tl.to(real_particles[i], 2, { x: dir + 18, scaleX: 1.4, ease: Expo.easeOut });
+    }
+
+  TweenLite.to(real_bt.querySelectorAll('.button__bg'), 0.9, { scale: 1, ease: Elastic.easeOut.config(1.2, 0.4), delay: 0.1, 
+      onComplete: function(){
+        console.log('clicked = false;')
+      },
+      onOverwrite: function(){
+        console.log('clicked = false; //overwrite')
+      } 
+    }, 0.6);
+
+    for (var i = 0; i < real_particleCount; i++) {
+      var dir = i % 2 ? '-' : '+';
+      var size = i < 2 ? 1 : getRandom(0.2, 0.6);
+      var r = i % 2 ? getRandom(-1, 1)*i/2 : getRandom(-1, 1)*i;
+
+      TweenLite.set(real_particles[i], { scale: size });
+      TweenLite.to(real_particles[i], 0.1, { scale: size, x: dir +'=25' });
+      TweenLite.to(real_particles[i], 0.6, { x: dir + 60, y: r*10, scale: 0, opacity: 0, ease: Power3.easeOut });
+    }
+};
 

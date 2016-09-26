@@ -6,7 +6,113 @@
  * - http://www.w3schools.com/tags/ref_av_dom.asp
  */
 
+var waitForFinalEvent = (function () {
+  var timers = {};
+  return function (callback, ms, uniqueId) {
+    if (!uniqueId) {
+      uniqueId = "Don't call this twice without a uniqueId";
+    }
+    if (timers[uniqueId]) {
+      clearTimeout (timers[uniqueId]);
+    }
+    timers[uniqueId] = setTimeout(callback, ms);
+  };
+})();
+
 (function (global) {
+
+
+  /** Stretch Button **/
+function getRandom2(min, max){
+  return Math.random() * (max - min) + min;
+}
+
+        var real2_bt = document.querySelectorAll('#hire-me')[0];
+        var rwd_box = document.querySelectorAll('#rwd_box');
+
+      function real2_animateHireMeButton(){
+
+     /*   var real2_particleCount = 6;
+        var real2_particles;
+        real2_particles = []
+        console.log('Woop Woop Fire away!');
+
+        TweenLite.to(real2_bt.querySelectorAll('.button__bg'), 1.5, { scaleX: 1.05, ease: Expo.easeOut, delay: 0.2 });
+
+
+          for (var i = 0; i < real2_particleCount; i++) {
+            real2_particles.push(document.createElement('span'));
+            real2_bt.appendChild(real2_particles[i]);
+
+            real2_particles[i].classList.add(i % 2 ? 'left' : 'right');
+            
+            var dir = i % 2 ? '-' : '+';
+            var tl = new TimelineLite();
+
+            tl.to(real2_particles[i], 2, { x: dir + 18, scaleX: 1.4, ease: Expo.easeOut });
+          }
+
+        TweenLite.to(real2_bt.querySelectorAll('.button__bg'), 0.9, { scale: 1, ease: Elastic.easeOut.config(1.2, 0.4), delay: 0.1, 
+            onComplete: function(){
+              console.log('clicked = false;')
+            },
+            onOverwrite: function(){
+              console.log('clicked = false; //overwrite')
+            } 
+          }, 0.6);
+
+          for (var i = 0; i < real2_particleCount; i++) {
+            var dir = i % 2 ? '-' : '+';
+            var size = i < 2 ? 1 : getRandom(0.2, 0.6);
+            var r = i % 2 ? getRandom(-1, 1)*i/2 : getRandom(-1, 1)*i;
+
+            TweenLite.set(real2_particles[i], { scale: size });
+            TweenLite.to(real2_particles[i], 0.1, { scale: size, x: dir +'=25' });
+            TweenLite.to(real2_particles[i], 0.6, { x: dir + 60, y: r*10, scale: 0, opacity: 0, ease: Power3.easeOut });
+          }*/
+
+
+  var real2_particleCount = 6;
+  var real2_particles;
+  real2_particles = []
+
+  TweenLite.to(real2_bt.querySelectorAll('.button__bg'), 1.5, { scaleX: 1.05, ease: Expo.easeOut, delay: 0.7 });
+
+
+    for (var i = 0; i < real2_particleCount; i++) {
+      real2_particles.push(document.createElement('span'));
+      real2_bt.appendChild(real2_particles[i]);
+
+      real2_particles[i].classList.add(i % 2 ? 'left' : 'right');
+      
+      var dir2 = i % 2 ? '-' : '+';
+      var tl2 = new TimelineLite();
+
+      tl2.to(real2_particles[i], 2, { x: dir2 + 18, scaleX: 1.4, ease: Expo.easeOut });
+    }
+
+  TweenLite.to(real2_bt.querySelectorAll('.button__bg'), 0.9, { scale: 1, ease: Elastic.easeOut.config(1.2, 0.4), delay: .9, 
+      onComplete: function(){
+        console.log('clicked = false;')
+      },
+      onOverwrite: function(){
+        console.log('clicked = false; //overwrite')
+      } 
+    }, 0.6);
+
+    for (var i = 0; i < real2_particleCount; i++) {
+      var dir = i % 2 ? '-' : '+';
+      var size = i < 2 ? 1 : getRandom2(0.2, 0.6);
+      var r = i % 2 ? getRandom2(-1, 1)*i/2 : getRandom2(-1, 1)*i;
+
+      TweenLite.set(real2_particles[i], { scale: size });
+      TweenLite.to(real2_particles[i], 0.1, { scale: size, x: dir +'=25' });
+      TweenLite.to(real2_particles[i], 0.6, { x: dir + 60, y: r*10, scale: 0, opacity: 0, ease: Power3.easeOut });
+    }
+      };
+
+
+
 
   // Define Bideo constructor on the global object
   global.Bideo = function () {
@@ -150,16 +256,53 @@ console.log('body = ',bv2yy);
     // Also called when window/container is resized
     this.resize = function () {
       
-        console.log('window height = ');
         var window_height = window.innerHeight;
-        console.log(window_height);
+
+        var window_width = window.innerWidth;
+
+        var temp_w = Math.floor(window_width/10);
+        var temp_h = Math.floor(window_height/10);
+
+        var final_w = 1;
+        var final_h = 1;
+
+         waitForFinalEvent(function(){
+          final_w = 100;
+          final_h = 100;
+
+           if (rwd_box) {
+             console.log("rwd_box.style");
+             console.log(rwd_box[0].style.width = temp_string);
+             console.log(rwd_box[0].style.height = temp_h + 'px');
+           }
+              console.log('final_w = ',final_w,' final_h = ', final_h);
+        }, 500, "resize-call-#1");
+
+        var temp_string = temp_w + 'px';
+        console.log('temp_string = ', temp_string);
+
+        //rwd_box.style.width = temp_string;
+        console.log('rwd_box = ', rwd_box);
+        console.log('bv = ', this.resize);
+       // rwd_box.style.heightRatio = Math.floor(window_height/100);
+
+
+        real2_animateHireMeButton();
+        
       
       // IE/Edge still don't support object-fit: cover
+      // 
+      // use for IE browsers:
       if ('object-fit' in document.body.style) return;
 
       // Video's intrinsic dimensions
       var w = this.videoEl.videoWidth
         , h = this.videoEl.videoHeight;
+
+
+
+      console.log('window width w = ', w);
+      console.log('window height h = ', h);
 
       // Intrinsic ratio
       // Will be more than 1 if W > H and less if H > W
@@ -221,6 +364,8 @@ console.log('body = ',bv2yy);
       this.videoEl.style.height = new_height + 'px';
     };
 
+
   };
+
 
 }(window));
