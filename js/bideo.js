@@ -266,14 +266,23 @@ console.log('body = ',bv2yy);
         var final_w = 1;
         var final_h = 1;
 
+        rwd_box[0].style.display = "block";
+
+        console.log('red');
+        console.log(rwd_box[0].style.border = "1px solid red");
+
          waitForFinalEvent(function(){
           final_w = 100;
           final_h = 100;
 
            if (rwd_box) {
              console.log("rwd_box.style");
+              console.log('blue');
+              console.log(rwd_box[0].style.border = "1px solid blue");
              console.log(rwd_box[0].style.width = temp_string);
              console.log(rwd_box[0].style.height = temp_h + 'px');
+
+             setTimeout(function () { rwd_box[0].style.display = "none"; }, 500);
            }
               console.log('final_w = ',final_w,' final_h = ', final_h);
         }, 500, "resize-call-#1");
